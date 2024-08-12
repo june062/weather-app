@@ -1,4 +1,22 @@
-h1 {
-  color: red;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-/*  */
+
+.display-card {
+  border: solid black;
+  min-width: 550px;
+  width: 35vw;
+  height: 50vh;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+.brief-info-container {
+  display: flex;
+  justify-content: center;
+}
+.brief-info {
+  border: solid black;
+  width: 50%;
+}
