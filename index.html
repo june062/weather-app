@@ -4,7 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="index.js"></script>
   <script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
-  <body></body>
+  <body>
+    <div class="search-container">
+      <input type="text" id="location" name="location" />
+      <button class="change-location">Search</button>
+      <button class="change-temp">C</button>
+    </div>
+    <p class="validity"></p>
+
+    <div class="display-card">
+      <div class="brief-info-container">
+        <div class="brief-info">
+          <h1 class="location"></h1>
+          <p class="temp"></p>
+          <p class="temp-max"></p>
+          <p class="temp-min"></p>
+        </div>
+      </div>
+
+      <div class="additional-info-container">
+        <div class="additional-info-left">
+          <p class="humidity"></p>
+          <p class="visibility"></p>
+          <p class="wind-speed"></p>
+        </div>
+        <div class="additional-info-right">
+          <p class="rain-chance"></p>
+          <p class="uv"></p>
+          <p class="dew"></p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
