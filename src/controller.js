@@ -1,17 +1,38 @@
 import { getWeatherData } from "./index.js";
 import { displayWeatherData } from "./display.js";
-export { button };
+/* export { button }; */
 
+let changeTemp = document.querySelector(".change-temp");
+let changeLocation = document.querySelector(".change-location");
+let unitType;
+
+function checkTempUnit() {
+  if (changeTemp.textContent === "C") {
+    unitType = "us";
+  } else {
+    unitType = "metric";
+  }
+}
 async function getData() {
   try {
     let weatherInput = document.querySelector("input").value;
-    let weather = await getWeatherData(weatherInput, "us");
-    console.log(weather);
-    displayWeatherData(weather);
+    checkTempUnit();
+    let weather = await getWeatherData(weatherInput, unitType);
+    displayWeatherData(weather, unitType);
   } catch (error) {
     /* console.log(error); */
   }
 }
-let button = document.querySelector("button");
 
-button.addEventListener("click", getData);
+async function changeText() {
+  changeTemp.textContent == "F"
+    ? (changeTemp.textContent = "C")
+    : (changeTemp.textContent = "F");
+  checkTempUnit();
+  displayWeatherData(
+    await getWeatherData(document.querySelector("input").value, unitType)
+  );
+}
+
+changeLocation.addEventListener("click", getData);
+changeTemp.addEventListener("click", changeText);
