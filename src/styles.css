@@ -19,4 +19,14 @@
 .brief-info {
   border: solid black;
   width: 50%;
+  text-align: center;
+}
+.additional-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+.additional-info-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

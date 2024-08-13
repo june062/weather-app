@@ -13,6 +13,6 @@ async function getWeatherData(location, unit) {
     let weatherData = await response.json();
     return weatherData;
   } catch (error) {
-    console.log(error);
+    console.log("Enter a valid location");
   }
 }
